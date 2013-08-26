@@ -1,0 +1,18 @@
+<atlassian-plugin name="${project.name}" key="${project.groupId}-${project.artifactId}" plugins-version="2">
+   <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+    
+    <repository-hook key="hook" name="${project.name}" class="com.devert.stash.hook.BambooPostReceiveHook">
+        <description>Post-receive Hook for notifying a bamboo endpoint of changes to this repository.</description>
+        <config-form name="Bamboo Post-receive Hook Config" key="hook-config">
+            <view>stash.hook.bamboo.configForm</view>
+            <directory location="/static/"/>
+        </config-form>
+    </repository-hook>
+
+</atlassian-plugin>

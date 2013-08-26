@@ -1,4 +1,4 @@
-stash-bamboo-post-receive-hook
-==============================
+Stash Post-Receive Hook for Bamboo
+================================
 
-Stash plugin for notifying a Bamboo endpoint after changes to a repo are committed.
+After making commits to Stash, trigger a Bamboo project to build.
