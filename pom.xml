@@ -14,8 +14,8 @@
         <url>http://www.dennisevert.com/</url>
     </organization>
 
-    <name>Stash Post-Receive Webhook to Bamboo</name>
-    <description>A post-receive webhook that triggers a build on a remote Bamboo URL.</description>
+    <name>Stash Post-Receive Hook to Bamboo</name>
+    <description>A post-receive hook that triggers a build on a remote Bamboo URL.</description>
     <packaging>atlassian-plugin</packaging>
 
     <dependencyManagement>

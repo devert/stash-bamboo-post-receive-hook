@@ -7,10 +7,10 @@
         <param name="plugin-logo">images/pluginLogo.png</param>
     </plugin-info>
     
-    <repository-hook key="hook" name="${project.name}" class="com.devert.stash.hook.BambooPostReceiveHook">
+    <repository-hook key="webhook" name="${project.name}" class="com.devert.stash.hook.BambooPostReceiveHook">
         <description>Post-receive Hook for notifying a bamboo endpoint of changes to this repository.</description>
-        <config-form name="Bamboo Post-receive Hook Config" key="hook-config">
-            <view>stash.hook.bamboo.configForm</view>
+        <config-form name="Simple Hook Config" key="simpleHook-config">
+            <view>stash.config.example.hook.simple.formContents</view>
             <directory location="/static/"/>
         </config-form>
     </repository-hook>

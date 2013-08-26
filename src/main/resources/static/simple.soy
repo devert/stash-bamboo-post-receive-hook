@@ -1,13 +1,13 @@
-{namespace com.devert.stash.hook.bamboo}
+{namespace stash.config.example.hook.simple}
 
 /**
  * @param config
  * @param? errors
  */
-{template .configForm}
+{template .formContents}
     {call aui.form.textField}
         {param id: 'bambooUrl' /}
-        {param value: $config['bambooUrl'] /}
+        {param value: $config ? $config['bambooUrl'] : null /}
         {param labelContent}
             {stash_i18n('stash.hook.bamboo.url.label', 'Bamboo URL')}
         {/param}
@@ -17,11 +17,11 @@
     {/call}
     {call aui.form.textField}
         {param id: 'bambooBuildKey' /}
-        {param value: $config['bambooBuildKey'] /}
+        {param value: $config ? $config['bambooBuildKey'] : null /}
         {param labelContent}
             {stash_i18n('stash.hook.bamboo.buildKey.label', 'Bamboo Build Key')}
         {/param}
-        {param descriptionText: stash_i18n('stash.hook.bamboo.buildKey.description', 'Build Key of the project to trigger in Bamboo') /}
+        {param descriptionText: stash_i18n('stash.hook.bamboo.buildKey.description', 'Build Key of the project to trigger') /}
         {param extraClasses: 'long' /}
         {param errorTexts: $errors ? $errors['bambooBuildKey'] : null /}
     {/call}
