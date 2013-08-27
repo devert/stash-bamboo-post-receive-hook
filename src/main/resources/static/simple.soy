@@ -16,13 +16,43 @@
         {param errorTexts: $errors ? $errors['bambooUrl'] : null /}
     {/call}
     {call aui.form.textField}
-        {param id: 'bambooBuildKey' /}
-        {param value: $config ? $config['bambooBuildKey'] : null /}
+        {param id: 'prodBranchName' /}
+        {param value: $config ? $config['prodBranchName'] : null /}
         {param labelContent}
-            {stash_i18n('stash.hook.bamboo.buildKey.label', 'Bamboo Build Key')}
+            {stash_i18n('stash.hook.bamboo.prodbranch.label', 'Production Branch Name')}
         {/param}
-        {param descriptionText: stash_i18n('stash.hook.bamboo.buildKey.description', 'Build Key of the project to trigger') /}
+        {param descriptionText: stash_i18n('stash.hook.bamboo.prodbranch.description', 'Name of branch for production releases') /}
         {param extraClasses: 'long' /}
-        {param errorTexts: $errors ? $errors['bambooBuildKey'] : null /}
+        {param errorTexts: $errors ? $errors['prodBranchName'] : null /}
+    {/call}
+    {call aui.form.textField}
+        {param id: 'prodBuildKey' /}
+        {param value: $config ? $config['prodBuildKey'] : null /}
+        {param labelContent}
+            {stash_i18n('stash.hook.bamboo.prodkey.label', 'Production Bamboo Build Key')}
+        {/param}
+        {param descriptionText: stash_i18n('stash.hook.bamboo.prodkey.description', 'Build key of the project to trigger after changes to production release branch') /}
+        {param extraClasses: 'long' /}
+        {param errorTexts: $errors ? $errors['prodBuildKey'] : null /}
+    {/call}
+    {call aui.form.textField}
+        {param id: 'devBranchName' /}
+        {param value: $config ? $config['devBranchName'] : null /}
+        {param labelContent}
+            {stash_i18n('stash.hook.bamboo.devbranch.label', 'Development Branch Name')}
+        {/param}
+        {param descriptionText: stash_i18n('stash.hook.bamboo.devbranch.description', 'Name of branch for development releases') /}
+        {param extraClasses: 'long' /}
+        {param errorTexts: $errors ? $errors['devBranchName'] : null /}
+    {/call}
+    {call aui.form.textField}
+        {param id: 'devBuildKey' /}
+        {param value: $config ? $config['devBuildKey'] : null /}
+        {param labelContent}
+            {stash_i18n('stash.hook.bamboo.devkey.label', 'Development Bamboo Build Key')}
+        {/param}
+        {param descriptionText: stash_i18n('stash.hook.bamboo.devkey.description', 'Build key of the project to trigger after changes to development release branch') /}
+        {param extraClasses: 'long' /}
+        {param errorTexts: $errors ? $errors['devBuildKey'] : null /}
     {/call}
 {/template}
